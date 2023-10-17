@@ -119,6 +119,3 @@ foreach ($matrizresultante as $fila) {
     }
 }
 
-
-if(isset($_POST['precio1'])) {
-}
