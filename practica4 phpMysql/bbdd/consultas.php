@@ -61,12 +61,20 @@ class Consultas
         mysqli_stmt_execute($consulta_stmt);
 
         // Obtener el resultado de la consulta
+
         mysqli_stmt_bind_result($consulta_stmt, $resultadoClave);
         mysqli_stmt_fetch($consulta_stmt);
 
+        echo "<br>";
+        echo $clave;
+        echo "<br>";
+        echo $resultadoClave;
         // Verificar si la contraseña coincide utilizando password_verify
-        if ($resultadoClave && password_verify($clave, $resultadoClave)) {
+        if (password_verify($clave, $resultadoClave)) {
             $loginCorrecto = true;
+            echo "entra";
+        } else {
+            echo "----------mal";
         }
 
         mysqli_stmt_close($consulta_stmt);

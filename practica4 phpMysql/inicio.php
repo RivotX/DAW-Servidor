@@ -29,12 +29,14 @@
 
             echo $usuario, $clave;
             
-            if ((Consultas::comprobarUsuario($usuario, $clave))) {
-                echo "BIEEEN";
-            } else {
-                echo "mal";
-            }
+            // if ((Consultas::comprobarUsuario($usuario, $clave))) {
+            //     echo "BIEEEN";
+            // } else {
+            //     echo "mal";
+            // }
+          
         }
+        Consultas::comprobarUsuario($usuario, $clave);
     } ?>
     <div class="container" id="container">
         <div class="form-container sign-up">
