@@ -21,22 +21,18 @@
             $clave = $_POST["clave"];
             $email = $_POST["email"];
 
-            Consultas::Insertar("usuarios", $usuario, $clave, $email);
-
+            Consultas::insertarUsuario("usuarios", $usuario, $clave, $email);
         } else if (isset($_POST['inicio'])) {
             $usuario = $_POST["nombre"];
             $clave = $_POST["password"];
 
-            echo $usuario, $clave;
-            
             // if ((Consultas::comprobarUsuario($usuario, $clave))) {
             //     echo "BIEEEN";
             // } else {
             //     echo "mal";
             // }
-          
+            Consultas::comprobarUsuario($usuario, $clave);
         }
-        Consultas::comprobarUsuario($usuario, $clave);
     } ?>
     <div class="container" id="container">
         <div class="form-container sign-up">

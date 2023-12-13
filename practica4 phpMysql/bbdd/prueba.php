@@ -11,12 +11,7 @@
     <?php
     include_once("consultas.php");
 
-    if (Consultas::comprobarUsuario("admin", "123")) {
-
-        echo "bien";
-    } else {
-        echo "mal";
-    };
+    Consultas::CrearTabla("usuarios");
     ?>
 </body>
 
