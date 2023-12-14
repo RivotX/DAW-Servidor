@@ -1,8 +1,12 @@
-#todo {
+#todo {}
+
+body {
+
+    background-image: url("../img/fondo\ rojito.jpg");
+    background-repeat: no-repeat;
 }
 
-body{
-
- background-image: url("../img/fondo\ rojito.jpg");
- background-repeat: no-repeat;
-}   
+#id {
+    background-color: lightblue !important;
+    cursor: pointer !important;
+}

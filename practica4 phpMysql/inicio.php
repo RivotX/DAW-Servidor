@@ -11,9 +11,10 @@
 
 <body>
     <?php
-    session_start();
-    session_destroy();
-    include_once("bbdd/consultas.php");
+    // session_start();
+    // session_destroy();
+
+    include_once("Consultas/consultas.php");
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['crear'])) {
@@ -22,15 +23,11 @@
             $email = $_POST["email"];
 
             Consultas::insertarUsuario("usuarios", $usuario, $clave, $email);
+
         } else if (isset($_POST['inicio'])) {
             $usuario = $_POST["nombre"];
             $clave = $_POST["password"];
 
-            // if ((Consultas::comprobarUsuario($usuario, $clave))) {
-            //     echo "BIEEEN";
-            // } else {
-            //     echo "mal";
-            // }
             Consultas::comprobarUsuario($usuario, $clave);
         }
     } ?>
@@ -82,7 +79,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
