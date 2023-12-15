@@ -12,6 +12,7 @@
     include_once("consultas.php");
 
     Consultas::CrearTabla("usuarios");
+    Consultas::CrearTabla2("bizums");
     ?>
 </body>
 
