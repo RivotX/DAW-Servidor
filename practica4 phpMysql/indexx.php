@@ -44,13 +44,14 @@
         <?php
         include_once("Consultas/consultas.php");
 
-        if (isset($_POST["destino"]) && isset($_POST["concepto"]) && isset($_POST["cantidad"])) {
-            $ID =
-                $destino = $_POST["destino"];
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["destino"]) && isset($_POST["concepto"]) && isset($_POST["cantidad"])) {
+            $destino = $_POST["destino"];
             $concepto = $_POST["concepto"];
             $cantidad = $_POST["cantidad"];
 
             Consultas::insertarBizum("bizums", $destino, $concepto, $cantidad);
+           
+
         }
 
 
@@ -62,7 +63,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Cuenta destino</th>
                         <th scope="col">Concepto</th>
-                        <th scope="col">Cantidad</th>
+                        <th scope="col">Cantidad(euros)</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
                     </tr>
