@@ -16,7 +16,7 @@
 
         <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdicion">Añadir</button>
 
-        <div class="modal fade" id="modalEdicion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade text-black " id="modalEdicion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -50,7 +50,7 @@
             $cantidad = $_POST["cantidad"];
 
             Consultas::insertarBizum("bizums", $destino, $concepto, $cantidad);
-           
+            header("Location: " . $_SERVER['PHP_SELF']); //misma pagina
 
         }
 
@@ -72,13 +72,17 @@
                     <?php
                     Consultas::mostrar();
 
-                    // Verificar si las variables $_POST están definidas antes de acceder a ellas
-                    $campo1 = isset($_POST["campo1"]) ? $_POST["campo1"] : "";
-                    $campo2 = isset($_POST["campo2"]) ? $_POST["campo2"] : "";
-                    $campo3 = isset($_POST["campo3"]) ? $_POST["campo3"] : "";
-                    $ID = isset($_POST['inputID']) ? (int)$_POST['inputID'] : 0;
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-                    Consultas::update($ID, $campo1, $campo2, $campo3);
+                        // Verificar si las variables $_POST están definidas antes de acceder a ellas
+                        $campo1 = isset($_POST["campo1"]) ? $_POST["campo1"] : "";
+                        $campo2 = isset($_POST["campo2"]) ? $_POST["campo2"] : "";
+                        $campo3 = isset($_POST["campo3"]) ? $_POST["campo3"] : "";
+                        $ID = isset($_POST['inputID']) ? (int)$_POST['inputID'] : 0;
+
+
+                        Consultas::update($ID, $campo1, $campo2, $campo3);
+                    }
 
                     if (isset($_POST["borrar"])) {
                         Consultas::Delete($ID);
@@ -100,7 +104,7 @@
             </form>
         </div>
 
-        <script src="scripts.js"></script>
+        <script src="js/scripts.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
