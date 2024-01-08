@@ -1,3 +1,4 @@
+<note> hola </note>
 <!DOCTYPE html>
 <html lang="en">
 
