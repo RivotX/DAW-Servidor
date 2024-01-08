@@ -1,4 +1,5 @@
-<note> hola </note>
+[!NOTE]
+notanotanota
 <!DOCTYPE html>
 <html lang="en">
 
