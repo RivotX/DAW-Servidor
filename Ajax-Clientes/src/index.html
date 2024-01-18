@@ -3,15 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../output.css" rel="stylesheet" />
+    <link href="./output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-center w-full text-5xl underline font-bold">
+    <h1 class="w-full text-5xl font-bold text-center underline">
       Mi Mastery-Chart en lol
     </h1>
-    <h3 id="enlace1" data-cod="1" class="text-3xl cursor-pointer mb-5">Rengar</h3>
-    <h3 id="enlace2" data-cod="2" class="text-3xl cursor-pointer">Rek'Sai</h3>
-    <p id="contenido"></p>
+
+    <div class="flex w-full mt-10">
+      <div class="flex flex-wrap justify-center w-2/5 gap-5">
+        <div data-cod="1" class="w-2/5 text-3xl cursor-pointer campeonn">
+          <img
+            class="w-full h-auto"
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg"
+            alt="Rengar"
+          />
+          <p class="text-center">Rengar</p>
+        </div>
+        <div data-cod="2" class="w-2/5 text-3xl cursor-pointer campeonn">
+          <img
+            class="w-full h-auto"
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_9.jpg"
+            alt="Rek'Sai"
+          />
+          <p class="text-center">Rek'Sai</p>
+        </div>
+        <div data-cod="3" class="w-2/5 text-3xl cursor-pointer campeonn">
+          <img
+            class="w-full h-auto"
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg"
+            alt="Jarvan IV"
+          />
+          <p class="text-center">Jarvan IV</p>
+        </div>
+        <div data-cod="4" class="w-2/5 text-3xl cursor-pointer campeonn">
+          <img
+            class="w-full h-auto"
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg"
+            alt="Lee Sin"
+          />
+          <p class="text-center">Lee Sin</p>
+        </div>
+        <div data-cod="5" class="w-2/5 text-3xl cursor-pointer campeonn">
+          <img
+            class="w-full h-auto"
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Elise_0.jpg"
+            alt="Elise"
+          />
+          <p class="text-center">Elise</p>
+        </div>
+        <div data-cod="6" class="w-2/5 text-3xl cursor-pointer campeonn">
+          <img
+            class="w-full h-auto"
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg"
+            alt="Zac"
+          />
+          <p class="text-center">Zac</p>
+        </div>
+      </div>
+      <div
+        class="w-2/4 px-6 border rounded-md"
+        style="padding-left: 5rem; padding-right: 5rem"
+      >
+        <h1 class="mt-3 text-2xl text-center underline">Información</h1>
+        <p id="contenido" class="text-lg text-pretty" style="margin-top: 0.5rem;"></p>
+        <div
+          id="carga"
+          class="loader-container"
+          style="display: none; position: absolute; margin-left:20%; margin-top:2%"
+        >
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+
     <script src="scripts.js"></script>
   </body>
 </html>
